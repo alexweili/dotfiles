@@ -1,0 +1,12 @@
+# This is an example for IceWM's toolbar definition file.
+#
+# Place your variants in /etc/icewm or in $HOME/.icewm
+# since modifications to this file will be discarded when you
+# (re)install icewm.
+#
+prog Terminal /usr/share/app-install/icons/terminal-tango.svg x-terminal-emulator
+prog xterm /usr/share/app-install/icons/xterm-color.svg xterm -sl 3000 -sb -j -T cheetah -n cheetah -fg Yellow -bg Midnightblue -fn 10x20 -cr Yellow -geometry 80x40 -ls
+#prog    "Vim" vim /usr/bin/gvim -f
+prog Chrome /usr/share/app-install/icons/chromium-browser.svg x-www-browser
+prog Intellij /home/wei/Program/Idea/idea-IC-145.597.3/bin/idea.png /home/wei/Program/Idea/idea-IC-145.597.3/bin/idea.sh
+prog "System Settings" /usr/share/app-install/icons/system-settings.png unity-control-center

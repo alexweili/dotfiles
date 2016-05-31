@@ -1,0 +1,61 @@
+(setq line-number-mode t)
+(setq viper-mode t)
+(require 'viper)
+
+(require 'font-lock)
+(setq global-font-lock-mode t)
+(setq font-lock-maximum-decoration t)
+
+(setq minibuffer-max-depth nil)
+(setq-default indent-tabs-mode nil)
+(put 'eval-expression 'disabled nil)
+
+(if (featurep 'toolbar) (progn (set-default-toolbar-position 'top) (add-spec-list-to-specifier default-toolbar-visible-p '((global (nil)))) (add-spec-list-to-specifier toolbar-buttons-captioned-p 'nil)))
+(setq-default bar-cursor nil)
+(make-face 'text-cursor)
+(add-spec-list-to-specifier (face-property 'text-cursor 'foreground) '((global (nil . [default background]))))
+(add-spec-list-to-specifier (face-property 'text-cursor 'background) '((global ((x) . "Red3"))))
+(add-spec-list-to-specifier (face-property 'text-cursor 'reverse) '((global ((tty) . t))))
+
+  (set-face-background 'default "midnightblue")
+  (set-face-foreground 'default "yellow")
+  ;; Code syntax highlighting
+  (set-face-foreground 'font-lock-comment-face "grey")
+  (set-face-foreground 'font-lock-comment-face "#cccc99")
+  (set-face-foreground 'font-lock-doc-string-face "seagreen2")
+  (set-face-foreground 'font-lock-function-name-face "lightcoral")
+  (set-face-foreground 'font-lock-keyword-face "white")
+  (set-face-foreground 'font-lock-preprocessor-face "green")
+  (set-face-foreground 'font-lock-reference-face "slateblue3")
+  (set-face-foreground 'font-lock-string-face "green")
+  ;; (set-face-foreground 'font-lock-number-face "white")
+  (set-face-foreground 'font-lock-type-face "AliceBlue")
+  (set-face-foreground 'font-lock-variable-name-face "yellow")
+  ;; The Modeline
+  (set-face-foreground 'modeline "yellow")
+  (set-face-background 'modeline "#379")
+  (set-face-foreground 'modeline-buffer-id "yellow")
+  (set-face-foreground 'modeline-mousable "yellow")
+  (set-face-foreground 'modeline-mousable-minor-mode "yellow")
+  ;; Random other stuff
+  (set-face-background 'highlight "midnightblue")
+  (set-face-foreground 'highlight "yellow")
+  (set-face-background 'isearch "paleturquoise")
+  (set-face-foreground 'isearch "firebrick")
+  (set-face-background 'primary-selection "paleturquoise")
+  (set-face-foreground 'primary-selection "midnightblue")
+  (set-face-background 'secondary-selection "paleturquoise")
+  (set-face-foreground 'secondary-selection "seagreen")
+
+  ;; (set-face-foreground 'font-lock-function-call-face "firebrick")
+  ;; (set-face-background 'font-lock-function-call-face "paleturquoise")
+
+;; (require 'gdb)
+(require 'gdb-highlight)
+
+(require 'paren)
+(paren-set-mode 'nil)
+(setq mouse-yank-at-point 'nil)
+
+;; Only for mac to avoid the crash.
+(setq progress-feedback-use-echo-area t)
